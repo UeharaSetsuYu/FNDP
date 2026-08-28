@@ -24,9 +24,19 @@ except ModuleNotFoundError:  # Support running this file directly.
 
 
 try:
-    from .DINOv2_model_init import DEFAULT_PROXY, MODEL_NAME, download_dinov2
+    from .DINOv2_model_init import (
+        DEFAULT_PROXY,
+        HF_HUB_CACHE,
+        MODEL_NAME,
+        download_dinov2,
+    )
 except ImportError:  # Support running this file directly.
-    from DINOv2_model_init import DEFAULT_PROXY, MODEL_NAME, download_dinov2
+    from DINOv2_model_init import (
+        DEFAULT_PROXY,
+        HF_HUB_CACHE,
+        MODEL_NAME,
+        download_dinov2,
+    )
 
 
 ImageInput = Union[Image.Image, str, Path]
@@ -34,7 +44,7 @@ Pooling = Literal["cls", "mean", "cls_mean"]
 OUTPUT_DIR = Path(
     r"D:\Data_Mining\Code\Experiment\FakeNewsDetectionByMVL\Vector_data"
 )
-MODEL_CACHE_DIR = r"D:\HFCache\hub"
+MODEL_CACHE_DIR = HF_HUB_CACHE
 SPLITS = ("train", "valid", "test")
 
 
